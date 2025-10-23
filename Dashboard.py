@@ -52,4 +52,5 @@ main_df = daily_metrics_df[(daily_metrics_df['order_purchase_timestamp'] >= star
 st.header('E-commerce Dashboard')
 
 # Display total orders
+
 total_orders = main_df['order_count'].sum()
