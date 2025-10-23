@@ -29,9 +29,6 @@ def create_daily_metrics_df(orders_df):
     daily_df.rename(columns={'order_id': 'order_count', 'order_status': 'total_orders'}, inplace=True)
     return daily_df
 
-# membuat dataframe metric harian
-daily_metrics_df = create_daily_metrics_df(all_data)
-
 # sidebar untuk input tanggal
 with st.sidebar:
     start_date, end_date = st.date_input(
@@ -54,3 +51,4 @@ st.header('E-commerce Dashboard')
 # Display total orders
 
 total_orders = main_df['order_count'].sum()
+
