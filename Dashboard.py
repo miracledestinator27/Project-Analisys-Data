@@ -77,6 +77,21 @@ plt.xticks(rotation=45, ha='right')
 plt.tight_layout()
 plt.show()
 
+# Menampilkan 10 kategory product yang paling dibeli
+print("Top 10 Kategori Produk Terbanyak:")
+display(products_category_counts.head(10))
+
+# Visualize 10 product teratas yang paling sering dibeli
+plt.figure(figsize=(10, 6))
+sns.barplot(x=products_category_counts.head(10).index, y=products_category_counts.head(10).values, palette='viridis')
+plt.title('Top 10 Kategori Produk Terbanyak')
+plt.xlabel('Kategori Produk')
+plt.ylabel('Jumlah Produk')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.show()
+
+
 
 
 
