@@ -31,7 +31,7 @@ def create_daily_metrics_df(orders_df):
 
 # membuat dataframe metric harian
 print ("ORDERS TABLE")
-orders_df = pd.read_csv("..\E-Commerce Public Dataset\orders_dataset.csv")
+orders_df = pd.read_csv("orders_dataset.csv")
 orders_df.head()
 daily_metrics_df = create_daily_metrics_df(orders_df)
 
@@ -58,3 +58,4 @@ st.header('E-commerce Dashboard')
 # Display total orders
 
 total_orders = main_df['order_count'].sum()
+
