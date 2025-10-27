@@ -22,6 +22,7 @@ class DataAnalyzer:
 
 # fungsi untuk membuat metric harian
 def create_daily_metrics_df(orders_df):
+    datetime_columns = ["order_purchase_timestamp", "order_approved_at", "order_delivered_carrier_date", "order_delivered_customer_date", "order_estimated_delivery_date"]
     for column in datetime_columns: 
         orders_df[column] = pd.to_datetime(orders_df[column])
     daily_df = orders_df.resample(rule='D', on='order_purchase_timestamp').agg({
@@ -60,5 +61,6 @@ st.header('E-commerce Dashboard')
 # Display total orders
 
 total_orders = main_df['order_count'].sum()
+
 
 
