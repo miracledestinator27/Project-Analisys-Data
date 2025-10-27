@@ -61,6 +61,22 @@ st.header('E-commerce Dashboard')
 # Display total orders
 
 total_orders = main_df['order_count'].sum()
+seller_city_counts = sellers_df['seller_city'].value_counts()
+
+# Menampilkan 10 Kota dengan seller terbanyak
+print("Top 10 Kota dengan seller Terbanyak:")
+display(seller_city_counts.head(10))
+
+# Visualisasi 10 Kota teratas
+plt.figure(figsize=(10, 6))
+sns.barplot(x=seller_city_counts.head(10).index, y=seller_city_counts.head(10).values, palette='viridis')
+plt.title('Top 10 Kota dengan Penjual Terbanyak')
+plt.xlabel('Kota')
+plt.ylabel('Jumlah Penjual')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.show()
+
 
 
 
