@@ -58,18 +58,6 @@ main_df = daily_metrics_df[(daily_metrics_df['order_purchase_timestamp'] >= star
 # Streamlit header
 st.header('E-commerce Dashboard')
 
-# Display total orders
-
-total_orders = main_df['order_count'].sum()
-sellers_df.info()
-products_df.info()
-# product_category_df.info()
-seller_city_counts = sellers_df['seller_city'].value_counts()
-
-# Menampilkan 10 Kota dengan seller terbanyak
-print("Top 10 Kota dengan seller Terbanyak:")
-display(seller_city_counts.head(10))
-
 # Visualisasi 10 Kota teratas
 plt.figure(figsize=(10, 6))
 sns.barplot(x=seller_city_counts.head(10).index, y=seller_city_counts.head(10).values, palette='viridis')
@@ -80,9 +68,6 @@ plt.xticks(rotation=45, ha='right')
 plt.tight_layout()
 plt.show()
 
-# Menampilkan 10 kategory product yang paling dibeli
-print("Top 10 Kategori Produk Terbanyak:")
-display(products_category_counts.head(10))
 
 # Visualize 10 product teratas yang paling sering dibeli
 plt.figure(figsize=(10, 6))
@@ -93,6 +78,7 @@ plt.ylabel('Jumlah Produk')
 plt.xticks(rotation=45, ha='right')
 plt.tight_layout()
 plt.show()
+
 
 
 
