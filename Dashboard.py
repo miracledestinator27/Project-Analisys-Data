@@ -61,6 +61,9 @@ st.header('E-commerce Dashboard')
 # Display total orders
 
 total_orders = main_df['order_count'].sum()
+sellers_df.info()
+products_df.info()
+# product_category_df.info()
 seller_city_counts = sellers_df['seller_city'].value_counts()
 
 # Menampilkan 10 Kota dengan seller terbanyak
@@ -90,6 +93,7 @@ plt.ylabel('Jumlah Produk')
 plt.xticks(rotation=45, ha='right')
 plt.tight_layout()
 plt.show()
+
 
 
 
